@@ -6,7 +6,6 @@ vite.config.ts.*
 *.tar.gz
 
 node_modules/
-*.mp4
-*.mov
+
 *.zip
 *.exe
