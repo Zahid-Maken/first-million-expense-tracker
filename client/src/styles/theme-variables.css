@@ -1,0 +1,459 @@
+/* Premium Theme Styles */
+
+/* Global theme transitions */
+body,
+body * {
+  transition-property: background-color, border-color, color, fill, stroke, box-shadow, transform;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Apply background texture to the body */
+body {
+  background-size: auto;
+  background-repeat: repeat;
+  background-position: center;
+  transition: background 300ms ease-in-out;
+}
+
+/* ======== NEBULA THEME ======== */
+/* Deep space cosmic style with glass morphism */
+
+body.theme-nebula {
+  --card-radius: 1.25rem;
+  --button-radius: 1rem;
+  --input-radius: 0.75rem;
+}
+
+body.theme-nebula .bg-card {
+  background-color: rgba(88, 28, 135, 0.15);
+  backdrop-filter: blur(8px);
+  border-radius: var(--card-radius);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  box-shadow: 0 10px 30px -5px rgba(76, 29, 149, 0.15), 
+              inset 0 1px 2px rgba(255, 255, 255, 0.1);
+}
+
+body.theme-nebula .text-primary {
+  text-shadow: 0 0 8px rgba(216, 180, 254, 0.4);
+}
+
+body.theme-nebula .shadow-glow {
+  box-shadow: 0 0 25px rgba(147, 51, 234, 0.35);
+}
+
+body.theme-nebula button:not(.bg-muted):not(.text-muted-foreground) {
+  border-radius: var(--button-radius);
+  padding: 0.7rem 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  box-shadow: 0 5px 15px rgba(124, 58, 237, 0.3),
+              inset 0 1px 2px rgba(255, 255, 255, 0.2);
+  transform: translateY(0);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+body.theme-nebula button:not(.bg-muted):not(.text-muted-foreground):hover {
+  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.4),
+              inset 0 1px 2px rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+body.theme-nebula input, 
+body.theme-nebula select, 
+body.theme-nebula textarea {
+  border-color: rgba(147, 51, 234, 0.3);
+  border-radius: var(--input-radius);
+  background-color: rgba(30, 10, 60, 0.1);
+  backdrop-filter: blur(4px);
+  padding: 0.75rem 1rem;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+body.theme-nebula h1, 
+body.theme-nebula h2, 
+body.theme-nebula h3 {
+  background: linear-gradient(135deg, #c084fc, #8b5cf6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+
+/* Custom progress bar */
+body.theme-nebula progress {
+  border-radius: 10px;
+  height: 10px;
+  overflow: hidden;
+  background: rgba(30, 10, 60, 0.2);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+body.theme-nebula progress::-webkit-progress-bar {
+  background: rgba(30, 10, 60, 0.2);
+}
+
+body.theme-nebula progress::-webkit-progress-value {
+  background: linear-gradient(90deg, #8b5cf6, #c084fc);
+  background-size: 400% 400%;
+  animation: nebula-progress-animation 3s ease infinite;
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.6);
+}
+
+@keyframes nebula-progress-animation {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+}
+
+/* ======== EMERALD THEME ======== */
+/* Clean, premium look with subtle geometric patterns */
+
+body.theme-emerald {
+  --card-radius: 0.5rem;
+  --button-radius: 0.25rem;
+  --input-radius: 0.25rem;
+}
+
+body.theme-emerald .bg-card {
+  background-color: rgba(6, 78, 59, 0.10);
+  backdrop-filter: blur(8px);
+  border-radius: var(--card-radius);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+  box-shadow: 0 4px 20px -5px rgba(5, 150, 105, 0.15);
+}
+
+body.theme-emerald .text-primary {
+  text-shadow: 0 0 8px rgba(16, 185, 129, 0.3);
+  font-weight: 600;
+}
+
+body.theme-emerald .shadow-glow {
+  box-shadow: 0 0 15px rgba(5, 150, 105, 0.3);
+}
+
+body.theme-emerald button:not(.bg-muted):not(.text-muted-foreground) {
+  border-radius: var(--button-radius);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.875rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid rgba(5, 150, 105, 0.5);
+}
+
+body.theme-emerald button:not(.bg-muted):not(.text-muted-foreground):hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-bottom-color: rgba(16, 185, 129, 0.8);
+}
+
+body.theme-emerald input, 
+body.theme-emerald select, 
+body.theme-emerald textarea {
+  border-color: rgba(5, 150, 105, 0.3);
+  border-radius: var(--input-radius);
+  background-color: rgba(5, 150, 105, 0.05);
+  padding: 0.6rem 0.8rem;
+  border-bottom: 2px solid rgba(5, 150, 105, 0.4);
+  box-shadow: none;
+}
+
+body.theme-emerald h1, 
+body.theme-emerald h2, 
+body.theme-emerald h3 {
+  color: rgba(6, 95, 70, 1);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  border-bottom: 2px solid rgba(5, 150, 105, 0.2);
+  padding-bottom: 0.25rem;
+}
+
+/* Custom progress bar */
+body.theme-emerald progress {
+  border-radius: 2px;
+  height: 8px;
+  overflow: hidden;
+  background: rgba(6, 78, 59, 0.1);
+}
+
+body.theme-emerald progress::-webkit-progress-bar {
+  background: rgba(6, 78, 59, 0.1);
+}
+
+body.theme-emerald progress::-webkit-progress-value {
+  background: linear-gradient(90deg, #059669, #10b981);
+}
+
+/* ======== ROYAL GOLD THEME ======== */
+/* Luxury royal style with gold accents */
+
+body.theme-royal-gold {
+  --card-radius: 0.75rem;
+  --button-radius: 2rem;
+  --input-radius: 0.5rem;
+}
+
+body.theme-royal-gold .bg-card {
+  background-color: rgba(120, 53, 15, 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: var(--card-radius);
+  border: 1px solid rgba(217, 119, 6, 0.2);
+  box-shadow: 0 10px 25px -5px rgba(120, 53, 15, 0.15),
+              inset 0 1px 1px rgba(255, 200, 90, 0.1);
+}
+
+body.theme-royal-gold .text-primary {
+  text-shadow: 0 0 8px rgba(245, 158, 11, 0.3);
+  font-weight: 600;
+}
+
+body.theme-royal-gold .shadow-glow {
+  box-shadow: 0 0 20px rgba(217, 119, 6, 0.3);
+}
+
+body.theme-royal-gold button:not(.bg-muted):not(.text-muted-foreground) {
+  border-radius: var(--button-radius);
+  font-weight: 600;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  box-shadow: 0 4px 10px rgba(245, 158, 11, 0.2),
+              inset 0 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+body.theme-royal-gold button:not(.bg-muted):not(.text-muted-foreground):hover {
+  box-shadow: 0 6px 15px rgba(245, 158, 11, 0.3),
+              inset 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+body.theme-royal-gold input, 
+body.theme-royal-gold select, 
+body.theme-royal-gold textarea {
+  border-color: rgba(217, 119, 6, 0.3);
+  border-radius: var(--input-radius);
+  background-color: rgba(245, 158, 11, 0.05);
+  border: 1px solid rgba(217, 119, 6, 0.2);
+  box-shadow: inset 0 1px 3px rgba(120, 53, 15, 0.1);
+  padding: 0.75rem 1rem;
+}
+
+body.theme-royal-gold h1, 
+body.theme-royal-gold h2, 
+body.theme-royal-gold h3 {
+  color: rgb(180, 83, 9);
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+/* Custom progress bar */
+body.theme-royal-gold progress {
+  border-radius: 5px;
+  height: 10px;
+  overflow: hidden;
+  background: rgba(120, 53, 15, 0.1);
+  border: 1px solid rgba(217, 119, 6, 0.2);
+}
+
+body.theme-royal-gold progress::-webkit-progress-bar {
+  background: rgba(120, 53, 15, 0.1);
+}
+
+body.theme-royal-gold progress::-webkit-progress-value {
+  background: linear-gradient(90deg, #d97706, #f59e0b);
+  box-shadow: 0 0 5px rgba(217, 119, 6, 0.4);
+}
+
+/* ======== NEON CYBERPUNK THEME ======== */
+/* Futuristic cyberpunk style with neon accents */
+
+body.theme-neon-cyberpunk {
+  --card-radius: 0px;
+  --button-radius: 0px;
+  --input-radius: 0px;
+}
+
+body.theme-neon-cyberpunk .bg-card {
+  background-color: rgba(31, 17, 46, 0.8);
+  backdrop-filter: blur(4px);
+  border-radius: var(--card-radius);
+  border: 1px solid rgba(236, 72, 153, 0.3);
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.2),
+              inset 0 0 2px rgba(236, 72, 153, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+body.theme-neon-cyberpunk .bg-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(236, 72, 153, 0.8), transparent);
+  animation: cyberpunk-scan 2s linear infinite;
+}
+
+@keyframes cyberpunk-scan {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+body.theme-neon-cyberpunk .text-primary {
+  text-shadow: 0 0 10px rgba(236, 72, 153, 0.6);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+body.theme-neon-cyberpunk .shadow-glow {
+  box-shadow: 0 0 20px rgba(219, 39, 119, 0.5);
+}
+
+body.theme-neon-cyberpunk button:not(.bg-muted):not(.text-muted-foreground) {
+  border-radius: var(--button-radius);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.875rem;
+  box-shadow: 0 0 15px rgba(236, 72, 153, 0.4);
+  border: 1px solid rgba(236, 72, 153, 0.5);
+  position: relative;
+  overflow: hidden;
+  padding: 0.75rem 1.5rem;
+}
+
+body.theme-neon-cyberpunk button:not(.bg-muted):not(.text-muted-foreground)::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ec4899, #8b5cf6, #ec4899);
+  background-size: 400% 400%;
+  animation: cyberpunk-button-border 3s ease infinite;
+  z-index: -1;
+}
+
+@keyframes cyberpunk-button-border {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+}
+
+body.theme-neon-cyberpunk button:not(.bg-muted):not(.text-muted-foreground):hover {
+  box-shadow: 0 0 25px rgba(236, 72, 153, 0.6);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+body.theme-neon-cyberpunk input, 
+body.theme-neon-cyberpunk select, 
+body.theme-neon-cyberpunk textarea {
+  border-color: rgba(236, 72, 153, 0.4);
+  border-width: 1px;
+  border-radius: var(--input-radius);
+  background-color: rgba(31, 17, 46, 0.6);
+  color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 10px rgba(236, 72, 153, 0.2),
+              inset 0 0 5px rgba(0, 0, 0, 0.5);
+  padding: 0.75rem 1rem;
+}
+
+body.theme-neon-cyberpunk h1, 
+body.theme-neon-cyberpunk h2, 
+body.theme-neon-cyberpunk h3 {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 800;
+  position: relative;
+  display: inline-block;
+}
+
+body.theme-neon-cyberpunk h1::after, 
+body.theme-neon-cyberpunk h2::after, 
+body.theme-neon-cyberpunk h3::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  color: rgba(236, 72, 153, 0.8);
+  z-index: -1;
+  filter: blur(4px);
+}
+
+/* Custom progress bar */
+body.theme-neon-cyberpunk progress {
+  border-radius: 0;
+  height: 12px;
+  overflow: hidden;
+  background: rgba(31, 17, 46, 0.6);
+  border: 1px solid rgba(236, 72, 153, 0.4);
+}
+
+body.theme-neon-cyberpunk progress::-webkit-progress-bar {
+  background: rgba(31, 17, 46, 0.6);
+}
+
+body.theme-neon-cyberpunk progress::-webkit-progress-value {
+  background: linear-gradient(90deg, #ec4899, #8b5cf6);
+  background-size: 400% 400%;
+  animation: cyberpunk-progress-animation 3s ease infinite;
+  box-shadow: 0 0 15px rgba(236, 72, 153, 0.7);
+}
+
+@keyframes cyberpunk-progress-animation {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+}
+
+/* Custom scrollbar for premium themes */
+body.theme-nebula::-webkit-scrollbar,
+body.theme-emerald::-webkit-scrollbar,
+body.theme-royal-gold::-webkit-scrollbar,
+body.theme-neon-cyberpunk::-webkit-scrollbar {
+  width: 8px;
+}
+
+body.theme-nebula::-webkit-scrollbar-track,
+body.theme-emerald::-webkit-scrollbar-track,
+body.theme-royal-gold::-webkit-scrollbar-track,
+body.theme-neon-cyberpunk::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+body.theme-nebula::-webkit-scrollbar-thumb {
+  background: rgba(147, 51, 234, 0.6);
+  border-radius: 4px;
+}
+
+body.theme-emerald::-webkit-scrollbar-thumb {
+  background: rgba(5, 150, 105, 0.6);
+  border-radius: 4px;
+}
+
+body.theme-royal-gold::-webkit-scrollbar-thumb {
+  background: rgba(217, 119, 6, 0.6);
+  border-radius: 4px;
+}
+
+body.theme-neon-cyberpunk::-webkit-scrollbar-thumb {
+  background: rgba(236, 72, 153, 0.6);
+  border-radius: 0px;
+}
+
+/* Premium theme button styles */
+body.theme-nebula .bg-primary {
+  background: linear-gradient(to right, #8b5cf6, #6366f1);
+}
+
+body.theme-emerald .bg-primary {
+  background: linear-gradient(to right, #10b981, #059669);
+}
+
+body.theme-royal-gold .bg-primary {
+  background: linear-gradient(to right, #f59e0b, #d97706);
+}
+
+body.theme-neon-cyberpunk .bg-primary {
+  background: linear-gradient(to right, #ec4899, #8b5cf6);
+} 

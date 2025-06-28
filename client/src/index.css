@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+@import './styles/theme-variables.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Modern Financial Theme - Light Mode */
+  --background: 252 100% 99%; /* #FEFEFE - Pure white with slight warmth */
+  --foreground: 234 25% 9%; /* #141B2D - Deep navy for text */
+  --muted: 240 14% 97%; /* #F8F9FB - Subtle gray background */
+  --muted-foreground: 232 12% 46%; /* #6B7489 - Muted text */
+  --popover: 0 0% 100%; /* #FFFFFF */
+  --popover-foreground: 234 25% 9%; /* #141B2D */
+  --card: 0 0% 100%; /* #FFFFFF */
+  --card-foreground: 234 25% 9%; /* #141B2D */
+  --border: 240 14% 92%; /* #E8EAEF - Soft borders */
+  --input: 240 14% 94%; /* #F0F1F5 - Input backgrounds */
+  
+  /* Primary - Vibrant Purple */
+  --primary: 262 89% 58%; /* #7C3AED - Modern purple */
+  --primary-foreground: 0 0% 100%; /* #FFFFFF */
+  
+  /* Secondary - Emerald Green */
+  --secondary: 158 78% 48%; /* #10D9A3 - Fresh green */
+  --secondary-foreground: 0 0% 100%; /* #FFFFFF */
+  
+  /* Accent - Warm Orange */
+  --accent: 25 95% 62%; /* #FF7A2F - Energetic orange */
+  --accent-foreground: 0 0% 100%; /* #FFFFFF */
+  
+  /* Destructive - Coral Red */
+  --destructive: 351 89% 60%; /* #F43F5E - Modern red */
+  --destructive-foreground: 0 0% 100%; /* #FFFFFF */
+  
+  --ring: 262 89% 58%; /* #7C3AED */
+  --radius: 1rem;
+  
+  /* Investment specific colors */
+  --success: 158 78% 48%; /* #10D9A3 - Profit green */
+  --warning: 45 93% 58%; /* #F59E0B - Warning amber */
+  --info: 213 89% 58%; /* #3B82F6 - Info blue */
+  
+  /* Chart colors - Modern palette */
+  --chart-1: 262 89% 58%; /* #7C3AED - Purple */
+  --chart-2: 158 78% 48%; /* #10D9A3 - Emerald */
+  --chart-3: 25 95% 62%; /* #FF7A2F - Orange */
+  --chart-4: 213 89% 58%; /* #3B82F6 - Blue */
+  --chart-5: 333 71% 51%; /* #E11D48 - Rose */
+  --chart-6: 285 85% 55%; /* #A855F7 - Violet */
+  
+  /* Gradient colors */
+  --gradient-start: 262 89% 58%; /* #7C3AED */
+  --gradient-end: 285 85% 55%; /* #A855F7 */
+  
+  /* Navigation colors */
+  --nav-background: 0 0% 100%; /* #FFFFFF */
+  --nav-border: 240 14% 92%; /* #E8EAEF */
+  --nav-active: 262 89% 58%; /* #7C3AED */
+  --nav-inactive: 232 12% 56%; /* #8B92A9 */
+}
+
+.dark {
+  /* Modern Financial Theme - Dark Mode */
+  --background: 235 30% 7%; /* #0D1117 - GitHub-like dark */
+  --foreground: 0 0% 95%; /* #F2F2F2 - Soft white */
+  --muted: 235 25% 12%; /* #161B26 - Subtle dark background */
+  --muted-foreground: 232 12% 60%; /* #8B92A9 - Muted dark text */
+  --popover: 235 30% 7%; /* #0D1117 */
+  --popover-foreground: 0 0% 95%; /* #F2F2F2 */
+  --card: 235 25% 10%; /* #141B2D - Card background */
+  --card-foreground: 0 0% 95%; /* #F2F2F2 */
+  --border: 235 20% 18%; /* #2D3748 - Dark borders */
+  --input: 235 20% 15%; /* #1A202C - Input backgrounds */
+  
+  /* Primary - Vibrant Purple (same) */
+  --primary: 262 89% 58%; /* #7C3AED */
+  --primary-foreground: 0 0% 100%; /* #FFFFFF */
+  
+  /* Secondary - Emerald Green (same) */
+  --secondary: 158 78% 48%; /* #10D9A3 */
+  --secondary-foreground: 0 0% 100%; /* #FFFFFF */
+  
+  /* Accent - Warm Orange (same) */
+  --accent: 25 95% 62%; /* #FF7A2F */
+  --accent-foreground: 0 0% 100%; /* #FFFFFF */
+  
+  /* Destructive - Coral Red (same) */
+  --destructive: 351 89% 60%; /* #F43F5E */
+  --destructive-foreground: 0 0% 100%; /* #FFFFFF */
+  
+  --ring: 262 89% 58%; /* #7C3AED */
+  
+  /* Investment specific colors (same) */
+  --success: 158 78% 48%; /* #10D9A3 */
+  --warning: 45 93% 58%; /* #F59E0B */
+  --info: 213 89% 58%; /* #3B82F6 */
+  
+  /* Navigation colors - Dark */
+  --nav-background: 235 25% 10%; /* #141B2D */
+  --nav-border: 235 20% 18%; /* #2D3748 */
+  --nav-active: 262 89% 58%; /* #7C3AED */
+  --nav-inactive: 232 12% 50%; /* #7A8097 */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  /* Gradient utilities */
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-end)));
+  }
+  
+  .bg-gradient-success {
+    background: linear-gradient(135deg, hsl(var(--success)), hsl(158 78% 38%));
+  }
+  
+  .bg-gradient-warning {
+    background: linear-gradient(135deg, hsl(var(--warning)), hsl(45 93% 48%));
+  }
+  
+  .bg-gradient-card {
+    background: linear-gradient(135deg, hsl(var(--card)), hsl(var(--muted)));
+  }
+  
+  /* Text gradients */
+  .text-gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-end)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Custom shadows */
+  .shadow-card {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  
+  .shadow-card-hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  
+  .shadow-glow {
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
+  }
+  
+  /* Navigation specific */
+  .nav-blur {
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+  }
+  
+  /* Investment specific colors */
+  .text-success {
+    color: hsl(var(--success));
+  }
+  
+  .text-warning {
+    color: hsl(var(--warning));
+  }
+  
+  .text-info {
+    color: hsl(var(--info));
+  }
+  
+  .bg-success {
+    background-color: hsl(var(--success));
+  }
+  
+  .bg-warning {
+    background-color: hsl(var(--warning));
+  }
+  
+  .bg-info {
+    background-color: hsl(var(--info));
+  }
+  
+  /* Glass morphism effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .dark .glass {
+    background: rgba(20, 27, 45, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+body, #root {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
